@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "monorepo-run": "^0.4.2"
+  }
+}
