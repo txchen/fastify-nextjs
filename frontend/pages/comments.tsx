@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import { Comment } from '../../common/comment'
+import { apihost } from '../utils/apihost'
 
 const Comments = ({ comments }: { comments: Comment[] }) => (
   <div>
@@ -44,7 +45,7 @@ const Comments = ({ comments }: { comments: Comment[] }) => (
 )
 
 Comments.getInitialProps = async ({ req }) => {
-  const res = await fetch('http://localhost:4000/api/comments')
+  const res = await fetch(`${apihost}api/comments`)
   const json = await res.json()
   return { comments: json }
 }

@@ -1,5 +1,11 @@
 {
   "dependencies": {
-    "monorepo-run": "^0.4.2"
+    "lerna": "^3.19.0"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "install": "lerna run npm install",
+    "build": "lerna run build",
+    "dev": "lerna run dev --stream"
   }
 }

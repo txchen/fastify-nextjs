@@ -7,7 +7,7 @@ process.env.PORT = port.toString()
 const start = async () => {
   const fastify = await createServer()
   try {
-    await fastify.listen(port)
+    await fastify.listen(port, '0.0.0.0')
     fastify.log.info(`Backend (fastify) listening on port ${port}`)
   } catch (err) {
     fastify.log.error(err)

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Nav from '../components/nav'
 import { Blog } from '../../common/blog'
 import fetch from 'isomorphic-unfetch'
+import { apihost } from '../utils/apihost'
 
 const Blogs = ({ blogs }: { blogs: Blog[] }) => (
   <div>
@@ -45,7 +46,7 @@ const Blogs = ({ blogs }: { blogs: Blog[] }) => (
 )
 
 Blogs.getInitialProps = async ({ req }) => {
-  const res = await fetch('http://localhost:4000/api/blogs')
+  const res = await fetch(`${apihost}api/blogs`)
   const json = await res.json()
   return { blogs: json }
 }
